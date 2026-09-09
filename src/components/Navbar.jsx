@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import hadanlogo from "../assets/hadan-logo.png";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Explore Hotels", path: "/hotels" },
@@ -43,14 +45,18 @@ const Navbar = () => {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-6 lg:gap-10">
         {navLinks.map((link, i) => (
-          <Link
+          <button
             key={i}
-            href={link.path}
+            onClick={() => {
+              {
+                navigate(link.path);
+              }
+            }}
             className="group flex flex-col gap-2 text-[#1c1b18] font-medium text-lg justify-center items-center "
           >
             {link.name}
             <div className="bg-[#171102] h-0.5 w-0 group-hover:w-full transition-all duration-300" />
-          </Link>
+          </button>
         ))}
       </div>
 
@@ -105,9 +111,15 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <Link key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+          <button
+            key={i}
+            onClick={() => {
+              navigate(link.path);
+              setIsMenuOpen(false);
+            }}
+          >
             {link.name}
-          </Link>
+          </button>
         ))}
 
         {user ? (
