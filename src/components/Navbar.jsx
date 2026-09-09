@@ -43,14 +43,14 @@ const Navbar = () => {
       {/* Desktop Nav */}
       <div className="hidden md:flex items-center gap-6 lg:gap-10">
         {navLinks.map((link, i) => (
-          <a
+          <Link
             key={i}
             href={link.path}
             className="group flex flex-col gap-2 text-[#1c1b18] font-medium text-lg justify-center items-center "
           >
             {link.name}
             <div className="bg-[#171102] h-0.5 w-0 group-hover:w-full transition-all duration-300" />
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -105,9 +105,9 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <a key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
+          <Link key={i} href={link.path} onClick={() => setIsMenuOpen(false)}>
             {link.name}
-          </a>
+          </Link>
         ))}
 
         {user ? (
