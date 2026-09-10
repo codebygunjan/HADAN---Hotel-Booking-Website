@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/HADAN---Hotel-Booking-Website/:path*",
+      "destination": "/:path*"
+    }
+  ]
+}
