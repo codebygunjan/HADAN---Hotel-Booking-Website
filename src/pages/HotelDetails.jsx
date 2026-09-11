@@ -25,16 +25,13 @@ const HotelDetails = () => {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [guests, setGuests] = useState("");
+  const [viewMessage, setViewMessage] = useState(false);
 
   const [isBooked, setIsBooked] = useState(
     allBookings.some((booking) => {
       return booking.hotel.hotelId == hotelData.hotelId;
     }),
   );
-
-  console.log("current hotel id", hotelData.hotelId);
-  console.log("current hotel name", hotelData.hotelName);
-  console.log("isBooked", isBooked);
 
   return (
     <div className="py-30 mt-5 md:py-35 px-4 md:px-16 1g:px-24 x1:px-32">
@@ -183,6 +180,14 @@ const HotelDetails = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          setIsBooked(true);
+
+          setTimeout(() => {
+            setViewMessage(true);
+            setTimeout(() => {
+              setViewMessage(false);
+            }, 3000);
+          }, 1000);
 
           const booking = {
             bookingId: Date.now(),
@@ -206,7 +211,7 @@ const HotelDetails = () => {
           setCheckOut("");
           setGuests("");
         }}
-        className="flex flex-col lg:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] py-6 px-10 rounded-x1 mx-auto mt-16 w-[90%]"
+        className="flex relative flex-col lg:flex-row items-start md:items-center justify-between bg-white shadow-[0px_0px_20px_rgba(0,0,0,0.15)] py-6 px-10 rounded-x1 mx-auto mt-16 w-[90%]"
       >
         <div className="flex flex-col lg:pl-20 flex-wrap md:flex-row items-start md:items-center gap-4 md:gap-10 text-gray-500">
           <div className="flex flex-col">
@@ -268,6 +273,12 @@ const HotelDetails = () => {
         >
           {isBooked ? "Booked" : "Book Now"}
         </button>
+
+        {viewMessage && (
+          <p className="absolute top-1 right-3 text-green-600 text-sm font-medium bg-green-100/50 px-3 py-2 rounded transition-opacity duration-300">
+            ✅ Booking confirmed! Check your bookings page.
+          </p>
+        )}
       </form>
     </div>
   );

@@ -10,7 +10,7 @@ const FeaturedHotels = () => {
         subTitle="handpicked selection of popular hotels for your stay"
         showButton={true}
       />
-      <div className="flex flex-wrap lg:gap-6 items-center mt-5 ml-7">
+      <div className="flex flex-wrap lg:gap-6 items-center mt-5 lg:ml-7">
         <div className="flex flex-wrap lg:gap-6 items-center mt-5">
           {allHotelInfo.slice(0, 3).map((hotelInfo, index) => {
             return (

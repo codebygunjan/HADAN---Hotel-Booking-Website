@@ -47,6 +47,9 @@ const Hotels = () => {
           <p className="text-sm md:text-base text-primary pt-3 max-w-170">
             Find the perfect stay for your next gateway
           </p>
+          <p className="text-sm text-gray-500 italic mt-1.5 transition-opacity duration-300 hover:text-gray-900">
+            Click on a hotel image to view details
+          </p>
         </div>
 
         {/* all hotels */}
@@ -79,6 +82,14 @@ const Hotels = () => {
               return true;
             }
           })
+          .sort((a, b) => {
+            if (selectedOptions === "Price: Low to High") {
+              return a.hotelPrice - b.hotelPrice;
+            } else if (selectedOptions === "Price: High to Low") {
+              return b.hotelPrice - a.hotelPrice;
+            }
+            return 0;
+          })
 
           .map((hotel) => {
             const alreadyAdded = wishlistHotels.find((wishlistHotel) => {
@@ -88,7 +99,7 @@ const Hotels = () => {
             return (
               <div
                 key={hotel.hotelId}
-                className="flex flex-col md:flex-row items-start py-10 pr-5 gap-6 border-b border-gray-300 last:pb-30 last:border-0 bg-gray-50"
+                className="flex flex-col md:flex-row px-2 items-start py-10 pr-5 gap-6 border-b border-gray-300 last:pb-10 last:border-0 bg-gray-50"
               >
                 <div className="relative">
                   <img
@@ -149,7 +160,6 @@ const Hotels = () => {
                     />
                   </button>
                 </div>
-
                 <div>
                   <p className="lg:text-3xl text-2xl font-playfair my-2">
                     {hotel.hotelName}
@@ -192,7 +202,7 @@ const Hotels = () => {
       </div>
 
       {/* right side filters */}
-      <div className="bg-white w-80  border-gray-300 pb-5  lg:sticky lg:top-30">
+      <div className="bg-white w-80  border-gray-300 pb-5  lg:fixed lg:top-24 lg:right-10">
         <div className=" border-b border-gray-200 flex p-5  items-center justify-between">
           <h2 className="text-lg capitalize text-gray-800 font-medium">
             filters

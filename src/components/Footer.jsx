@@ -3,7 +3,7 @@ import hadanlogo from "../assets/hadan-logo.png";
 const Footer = () => {
   return (
     <div>
-      <div className="text-gray-500/80 bg-gray-100 pt-8 px-6 md:px-16 lg:px-24 xl:px-32">
+      <div className="text-gray-500/80 bg-gray-100 w-full pt-8 px-6 md:px-16 lg:px-24 xl:px-32">
         <div className="flex flex-wrap justify-between gap-12 md:gap-6">
           <div className="max-w-80">
             <img

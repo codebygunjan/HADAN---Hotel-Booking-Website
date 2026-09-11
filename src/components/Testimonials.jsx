@@ -6,11 +6,11 @@ const Testimonials = () => {
   return (
     <div>
       <Title title="see what people say" />
-      <div className="flex items-center overflow-x-auto gap-6 ml-5 mb-10 no-scrollBar">
+      <div className="flex items-center overflow-x-auto gap-2 ml-2 ml:lg-4 mb-10 no-scrollBar">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="bg-white p-6 rounded-xl shadow shrink-0"
+            className="bg-white lg:p-6 p-4 rounded-xl shadow shrink-0 mt-3 lg:mt-1"
           >
             <div className="flex items-center gap-3">
               <img
@@ -20,7 +20,7 @@ const Testimonials = () => {
               />
               <div>
                 <p className="font-playfair text-xl">{testimonial.name}</p>
-                <p className="text-gray-500">{testimonial.address}</p>
+                <p className="text-gray-500 text-sm">{testimonial.address}</p>
               </div>
             </div>
             <div className="flex items-center gap-1 mt-4">
@@ -30,7 +30,7 @@ const Testimonials = () => {
                   <Star key={index} color="orange" fill="orange" />
                 ))}
             </div>
-            <p className="text-gray-500 max-w-90 mt-4">
+            <p className="text-gray-500 max-w-90 mt-4 lg:text-lg text-sm">
               "{testimonial.review}"
             </p>
           </div>

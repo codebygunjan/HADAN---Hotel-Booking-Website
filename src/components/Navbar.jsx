@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50 'bg-[#F7F3EA]' ${
+      className={`fixed top-0 left-0 w-full flex items-center justify-between px-4 md:px-9 lg:px-24 xl:px-32 transition-all duration-500 z-50 'bg-[#F7F3EA]' ${
         isScrolled
           ? "shadow-lg py-3 md:py-4 bg-white text-gray-900"
           : "py-4 md:py-6"
@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       {/* Logo */}
       <Link to="/">
-        <img className="w-49 h-auto" src={hadanlogo} alt="HADAN" />
+        <img className="w-49 md:w-45 h-auto" src={hadanlogo} alt="HADAN" />
       </Link>
 
       {/* Desktop Nav */}
@@ -52,7 +52,7 @@ const Navbar = () => {
                 navigate(link.path);
               }
             }}
-            className="group flex flex-col gap-2 text-[#1c1b18] font-medium text-lg justify-center items-center "
+            className="group flex flex-col gap-2 text-[#1c1b18] font-medium text-lg md:text-sm justify-center items-center "
           >
             {link.name}
             <div className="bg-[#171102] h-0.5 w-0 group-hover:w-full transition-all duration-300" />

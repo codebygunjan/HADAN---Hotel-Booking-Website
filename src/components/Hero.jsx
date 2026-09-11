@@ -11,7 +11,6 @@ const Hero = () => {
         bg-cover
         bg-center
         bg-no-repeat
-
         flex
         flex-col
         items-center

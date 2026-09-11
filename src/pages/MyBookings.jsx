@@ -129,8 +129,6 @@ const MyBookings = () => {
         );
       })}
 
-
-      
       {/* no bookings yet */}
       {allBookings.length === 0 && (
         <div className="flex flex-col items-center">
