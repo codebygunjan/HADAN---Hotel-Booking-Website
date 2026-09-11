@@ -10,7 +10,7 @@ const basename = window.location.hostname.endsWith("github.io")
   : "/";
 createRoot(document.getElementById("root")).render(
   <ClerkProvider publishableKey={clerkPubKey}>
-    <BrowserRouter basename="/HADAN---Hotel-Booking-Website">
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </ClerkProvider>,
