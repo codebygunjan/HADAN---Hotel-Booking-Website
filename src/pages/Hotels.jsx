@@ -142,10 +142,10 @@ const Hotels = () => {
                     }`}
                   >
                     <Heart
-                      size={alreadyAdded ? 25 : 19}
+                      size={19}
                       color={alreadyAdded ? "#F6355F" : "white"}
                       fill={alreadyAdded ? "#F6355F" : "transparent"}
-                      strokeWidth={4}
+                      strokeWidth={3}
                     />
                   </button>
                 </div>
