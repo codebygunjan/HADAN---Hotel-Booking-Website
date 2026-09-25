@@ -80,6 +80,7 @@ const Wishlist = () => {
           <div>
             <img
               className="lg:h-110 xl:h-110 md:h-100 h-80"
+              loading="lazy"
               src={wishlistImg}
               alt=""
             />

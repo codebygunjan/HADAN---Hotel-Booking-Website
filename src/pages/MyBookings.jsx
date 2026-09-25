@@ -134,6 +134,7 @@ const MyBookings = () => {
         <div className="flex flex-col items-center">
           <div>
             <img
+              loading="lazy"
               className="lg:h-110 xl:h-110 md:h-100 h-80"
               src={noBooking}
               alt=""
